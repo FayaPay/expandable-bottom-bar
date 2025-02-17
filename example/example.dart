@@ -1,5 +1,6 @@
 import 'package:expandable_bottom_bar/expandable_bottom_bar.dart';
 import 'package:flutter/material.dart';
+
 import 'theme.dart';
 
 void main() => runApp(MaterialApp(home: Example()));
@@ -27,7 +28,7 @@ class Page extends StatelessWidget {
 
       appBar: AppBar(
         title: Text("Panel Showcase"),
-        backgroundColor: Theme.of(context).bottomAppBarColor,
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
       ),
 
       // Lets use docked FAB for handling state of sheet
@@ -51,9 +52,8 @@ class Page extends StatelessWidget {
       bottomNavigationBar: BottomExpandableAppBar(
         expandedHeight: 550,
         horizontalMargin: 16,
-        shape: AutomaticNotchedShape(
-            RoundedRectangleBorder(), StadiumBorder(side: BorderSide())),
-        expandedBackColor: Theme.of(context).backgroundColor,
+        shape: AutomaticNotchedShape(RoundedRectangleBorder(), StadiumBorder(side: BorderSide())),
+        expandedBackColor: Theme.of(context).colorScheme.surface,
         expandedBody: Center(
           child: Text("Hello world!"),
         ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class BottomBarController extends ChangeNotifier {
   final bool snap;
-  final double? dragLength;
+  double? dragLength;
 
   BottomBarController({
     required TickerProvider vsync,
@@ -13,11 +13,9 @@ class BottomBarController extends ChangeNotifier {
         dragLength = dragLength ?? 0;
 
   @Deprecated("use state instead. Will be removed soon")
-  Animation<double> get animation =>
-      _animationController?.view ?? kAlwaysCompleteAnimation;
+  Animation<double> get animation => _animationController.view ?? kAlwaysCompleteAnimation;
 
-  Animation<double> get state =>
-      _animationController?.view ?? kAlwaysCompleteAnimation;
+  Animation<double> get state => _animationController.view ?? kAlwaysCompleteAnimation;
 
   final AnimationController _animationController;
 

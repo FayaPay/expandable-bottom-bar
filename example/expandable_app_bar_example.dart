@@ -80,8 +80,23 @@ class _PageState extends State<Page> with SingleTickerProviderStateMixin {
             attachSide: Side.Top,
             expandedBackColor: Theme.of(context).colorScheme.surface,
             // Your bottom sheet code here
-            expandedBody: Center(
-              child: Text("Hello world!"),
+expandedBody: SingleChildScrollView(
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      "Expanded Panel Content",
+                      style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(height: 16),
+                    // Your other content widgets here
+                    // ...
+                  ],
+                ),
+              ),
             ),
             // shape: AutomaticNotchedShape(
             //     RoundedRectangleBorder(),

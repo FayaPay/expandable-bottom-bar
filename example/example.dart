@@ -54,8 +54,23 @@ class Page extends StatelessWidget {
         horizontalMargin: 16,
         shape: AutomaticNotchedShape(RoundedRectangleBorder(), StadiumBorder(side: BorderSide())),
         expandedBackColor: Theme.of(context).colorScheme.surface,
-        expandedBody: Center(
-          child: Text("Hello world!"),
+        expandedBody: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  "Expanded Panel Content",
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 16),
+                // Your other content widgets here
+                // ...
+              ],
+            ),
+          ),
         ),
         bottomAppBarBody: Padding(
           padding: const EdgeInsets.all(8.0),
